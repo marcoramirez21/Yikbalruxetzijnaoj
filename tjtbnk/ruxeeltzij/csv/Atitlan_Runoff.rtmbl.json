@@ -7,11 +7,11 @@
   "tzijowäch": "",
   "ruq'ijlem": null,
   "k'olib'äl": "Iximulew",
+  "q'ij": {
+    "ruche'el'": "Date",
+    "rub'eyal": "%Y%m"
+  },
   "retal jaloj": {
-    "q'ij": {
-      "rub'i'": "Date",
-      "junilal": "%Y%m"
-    },
     "Tz'ujal chirij ulew": {
       "rub'i'": "mm",
       "junilal": "mm"

@@ -10,3 +10,6 @@ class RutojtobenïkSamaj(unittest.TestCase):
 
     def test_retal_jaloj(ri):
         ri.assertSetEqual(ri.samaj.retal_jaloj, {"Tz'ujal chirij ulew"})
+
+    def test_rejqalem(ri):
+        print(ri.samaj.rejqalem("Tz'ujal chirij ulew"))
