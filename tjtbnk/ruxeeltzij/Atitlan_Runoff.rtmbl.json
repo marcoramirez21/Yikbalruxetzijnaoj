@@ -1,0 +1,20 @@
+{
+  "rub'i'": "Tz'ujal chirij ulew",
+  "rochochib'äl": "Atitlan_Runoff.csv",
+  "q'ij xjunumaxïk": "10-2-2020",
+  "xjunumaxïk roma": "جسيكا بو نصّار",
+  "tz'ib'anel": "",
+  "tzijowäch": "",
+  "ruq'ijlem": null,
+  "k'olib'äl": "Iximulew",
+  "retal jaloj": {
+    "q'ij": {
+      "rub'i'": "Date",
+      "junilal": "%Y%m"
+    },
+    "Tz'ujal chirij ulew": {
+      "rub'i'": "mm",
+      "junilal": "mm"
+    }
+  }
+}
