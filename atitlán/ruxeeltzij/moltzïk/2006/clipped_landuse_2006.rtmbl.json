@@ -1,0 +1,56 @@
+{
+  "rub'i'": "Rukusaxïk ulew 2012 ulew",
+  "rochochib'äl": "clipped_landuse_2012_iarna.tif",
+  "q'ij xjunumaxïk": "21-2-2020",
+  "xjunumaxïk roma": "جسيكا بو نصّار",
+  "tz'ib'anel": "IARNA-URL",
+  "tzijowäch": "Rukusaxïk ulew pa ri junab' 2012.",
+  "ruq'ijlem": null,
+  "q'ij": "2012",
+  "xak": {
+    "1": {
+      "rub'anom": "cholanil",
+      "retal jaloj": {
+         301 densely built-up area
+425 sports field
+427a football field
+428 cemetery
+432 airfield
+460 mining-active
+461 mining- inactive
+493 factory area
+531 lava area
+534 gravel area
+604 water
+648 swimming pool
+664 land subject to natural inundation
+679 wet sand
+701 woodland area
+704 vegetation, not specified
+705 scattered trees area
+706 scrub area
+707 plantation area
+      }
+    }
+  }
+}
+301	 	 	Área Densamente edificada.
+425	 		Ferias. parques de diversión. campos de golf. Poliganos de tiro al blanco. centros de deportes y areas similares
+427a	 	Campo de Futbol	Campo de futbol
+428	 	Cementerio
+432	 	Aeropuerto. pistas de revestimiento suave
+460	 	Cantera	Cantera. Activa
+493	 	 	Area limitada
+531	 	 	Áreas de superficie distorcionada (karst. piedra caliza. lava. peñas. rocas, burbujas de gas. etc.) de menos de 25.0 mm (1.0
+534	 	 	Grava
+604	      Lago Perenne
+648	 	Piscina	Piscinas de natación y estanques artificiales
+664	 	 	Terreno sujeto a inundación controlada
+670	 	 	Arena húmeda.
+701	 	 	Bosque
+704	 	 	Claros
+705	 	 	Árboles dispersos
+706	 	 	Matorral o monte bajo
+707	 		Plantación, huerto y vivero
+
+
