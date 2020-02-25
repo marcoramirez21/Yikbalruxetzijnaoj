@@ -10,6 +10,9 @@ _qaxantzij = {
     },
     "K'olib'äl": {
         "español": "Lugar",
+    },
+    "Ruxe'el": {
+        "español": "Fuente"
     }
 }
 

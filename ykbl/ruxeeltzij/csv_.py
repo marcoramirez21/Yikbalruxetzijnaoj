@@ -1,9 +1,13 @@
 import os
 
 import pandas as pd
+from pint import UnitRegistry
 
 from ykbl.samajibäl import _, rubanom_ramaj
+from ykbl.setul import Setul
 from .ruxeeltzij import RuxeelTzij, TununemRetalJaloj
+
+ureg = UnitRegistry()
 
 
 class RucheelRamaj(object):
@@ -13,8 +17,10 @@ class RucheelRamaj(object):
 
 
 class RucheelKolibäl(object):
-    def __init__(ri, rucheel):
+    def __init__(ri, rucheel, setul, jalonïk=None):
         ri.rucheel = rucheel
+        ri.setul = setul
+        ri.jalonïk = jalonïk or {}
 
 
 class RuxeelTzijCSV(RuxeelTzij):
@@ -43,9 +49,9 @@ class RuxeelTzijCSV(RuxeelTzij):
             tzj.to_parquet(ri.cache)
 
         if isinstance(ri.kolibäl, RucheelKolibäl):
-            raise NotImplementedError  # Ruqaxanik pa etal
+            tzj[rucheel_kolibäl] = tzj[ri.kolibäl.rucheel].map(ri.kolibäl.jalonïk).fillna(tzj[ri.kolibäl.rucheel])
         elif ri.kolibäl:
-            tzj[rucheel_kolibäl] = ri.kolibäl
+            tzj[rucheel_kolibäl] = str(ri.kolibäl)
 
         if isinstance(ri.ramaj, RucheelRamaj):
             tzj[ri.ramaj.rucheel] = pd.to_datetime(tzj[ri.ramaj.rucheel], format=ri.ramaj.rubeyal)
@@ -53,6 +59,18 @@ class RuxeelTzijCSV(RuxeelTzij):
             tzj[rucheel_ramaj] = rubanom_ramaj(ri.ramaj)
 
         tzj = tzj.rename(columns=ri._kibi_retaljaloj_rucheel(chabäl))
+
+        if kolibäl is not None:  # Chi ninb'an: tiqatz'u chi setul kolibäl == ri.setul
+            if isinstance(kolibäl, Setul):
+                taq_kolibäl = kolibäl.taq_etal
+            else:
+                taq_kolibäl = kolibäl.retal
+
+            tzj = tzj[tzj[rucheel_kolibäl].isin(taq_kolibäl)]
+
+        for rtl in retal_jaloj:
+            tnm = next(tnm for tnm in ri.tununem if tnm.retal_jaloj == rtl)
+            tzj[rtl.rubi_pa(chabäl)] *= tnm
         return tzj
 
     def _rucheel_csv(ri, retal_jaloj):

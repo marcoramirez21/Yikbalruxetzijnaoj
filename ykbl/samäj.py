@@ -1,9 +1,8 @@
 import pandas as pd
 
 from .retal_jaloj import RetalJaloj
-from .ruxeeltzij import RuxeelTzijMoltzïk
 from .samajibäl import _
-from .setul import SetulShp
+from .setul import KolibälSetul, Setul
 
 
 class Samäj(object):
@@ -18,19 +17,36 @@ class Samäj(object):
         ri.chabäl = chabäl
 
     def rejqalem(ri, retal_jaloj, kolibäl, ramaj):
+        if ramaj is not None:
+            raise NotImplementedError("K'o na chi nintz'ib'aj ri runuk' kematz'ib' re. Takuyu numaq :)")
+
+        kolibäl = ri._rusukxïk_kolibäl(kolibäl)
+
         retal_jaloj = ri._rusikxïk_retal_jaloj(retal_jaloj)
         rucheel = [rtl.rubi_pa(ri.chabäl) for rtl in retal_jaloj]
 
-        tzolinïk = pd.DataFrame(columns=rucheel + [_("Ramaj", ri.chabäl), _("K'olibäl", ri.chabäl)])
-        for rxl in ri.ruxeel_tzij:
-            # RuxeelTzijMoltzïk rajwaxïk jun ruSetulShp chi nelesaj rutzij
-            if not isinstance(rxl, RuxeelTzijMoltzïk) or isinstance(kolibäl, SetulShp):
-                tzij = rxl.rejqalem(retal_jaloj, kolibäl=kolibäl, ramaj=ramaj, chabäl=ri.chabäl)
-                if tzij:
-                    tzij[_("Ruxe'el", ri.chabäl)] = rxl.rubi
-                    tzolinïk = tzolinïk.append(tzij)
+        rucheel_kankowi = [_("Ramaj", ri.chabäl), _("K'olibäl", ri.chabäl)]
+        tzolinïk = pd.DataFrame(columns=rucheel + rucheel_kankowi)
 
-        return tzolinïk
+        for rxl in ri.ruxeel_tzij:
+            tzij = rxl.rejqalem(retal_jaloj, kolibäl=kolibäl, ramaj=ramaj, chabäl=ri.chabäl)
+            if tzij is not None and len(tzij):
+                tzij[_("Ruxe'el", ri.chabäl)] = rxl.rubi
+                tzolinïk = tzolinïk.append(tzij)
+
+        return tzolinïk.reset_index()
+
+    @staticmethod
+    def _rusukxïk_kolibäl(kolibäl):
+        if kolibäl is None:
+            return kolibäl
+        if isinstance(kolibäl, (Setul, KolibälSetul)):
+            return kolibäl
+        if isinstance(kolibäl, str):
+            raise TypeError(
+                "Rajwaxïk naya' jun setul chuqa', achi'el pa `KolibälSetul(nusetul, {})`.".format(kolibäl)
+            )
+        raise TypeError(kolibäl)
 
     def _rusikxïk_retal_jaloj(ri, retal_jaloj):
         if not retal_jaloj:
