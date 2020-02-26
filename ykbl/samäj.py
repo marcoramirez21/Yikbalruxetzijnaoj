@@ -26,7 +26,7 @@ class Samäj(object):
         rucheel = [rtl.rubi_pa(ri.chabäl) for rtl in retal_jaloj]
 
         rucheel_kankowi = [_("Ramaj", ri.chabäl), _("K'olib'äl", ri.chabäl)]
-        tzolinïk = pd.DataFrame(columns=rucheel + rucheel_kankowi)
+        tzolinïk = pd.DataFrame(columns=rucheel_kankowi + rucheel)
 
         for rxl in ri.ruxeel_tzij:
             tzij = rxl.rejqalem(retal_jaloj, kolibäl=kolibäl, ramaj=ramaj, chabäl=ri.chabäl)
@@ -34,7 +34,7 @@ class Samäj(object):
                 tzij[_("Ruxe'el", ri.chabäl)] = rxl.rubi
                 tzolinïk = tzolinïk.append(tzij)
 
-        return tzolinïk.reset_index()
+        return tzolinïk
 
     @staticmethod
     def _rusukxïk_kolibäl(kolibäl):
