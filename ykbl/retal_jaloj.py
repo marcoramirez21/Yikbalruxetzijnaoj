@@ -2,10 +2,10 @@ from .samajibäl import rubanom_kulbat
 
 
 class RetalJaloj(object):
-    def __init__(ri, rubi, kulbat, junanil):
+    def __init__(ri, rubi, kulbat, junilal):
         ri.rubi = rubi
         ri.kulbat = rubanom_kulbat(kulbat)
-        ri.junanil = junanil
+        ri.junilal = junilal
 
     def rubi_pa(ri, chabäl):
         chabäl = [chabäl] if isinstance(chabäl, str) else chabäl

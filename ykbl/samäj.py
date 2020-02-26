@@ -16,7 +16,7 @@ class Samäj(object):
         chabäl = [chabäl] if isinstance(chabäl, str) else chabäl
         ri.chabäl = chabäl
 
-    def rejqalem(ri, retal_jaloj, kolibäl, ramaj):
+    def rejqalem(ri, retal_jaloj=None, kolibäl=None, ramaj=None):
         if ramaj is not None:
             raise NotImplementedError("K'o na chi nintz'ib'aj ri runuk' kematz'ib' re. Takuyu numaq :)")
 
@@ -25,7 +25,7 @@ class Samäj(object):
         retal_jaloj = ri._rusikxïk_retal_jaloj(retal_jaloj)
         rucheel = [rtl.rubi_pa(ri.chabäl) for rtl in retal_jaloj]
 
-        rucheel_kankowi = [_("Ramaj", ri.chabäl), _("K'olibäl", ri.chabäl)]
+        rucheel_kankowi = [_("Ramaj", ri.chabäl), _("K'olib'äl", ri.chabäl)]
         tzolinïk = pd.DataFrame(columns=rucheel + rucheel_kankowi)
 
         for rxl in ri.ruxeel_tzij:
@@ -57,6 +57,6 @@ class Samäj(object):
             if isinstance(retal_jaloj, RetalJaloj):
                 tzolinïk.add(rtl)
             else:
-                tzolinïk.add(next(retal for retal in ri.retal_jaloj if retal.rubi_pa(ri.chabäl)))
+                tzolinïk.add(next(retal for retal in ri.retal_jaloj if retal.rubi_pa(ri.chabäl) == rtl))
 
         return tzolinïk

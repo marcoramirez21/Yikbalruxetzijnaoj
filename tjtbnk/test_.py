@@ -46,4 +46,4 @@ class RutojtobenïkSamaj(unittest.TestCase):
         # --> Retal jaloj man nok ta kejqalem chupam kik'ulb'at
 
         setul.kolibäl
-        setul.chupam("K'olibäl")
+        setul.chupam("K'olib'äl")

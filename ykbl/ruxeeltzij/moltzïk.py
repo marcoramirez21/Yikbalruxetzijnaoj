@@ -5,27 +5,27 @@ from rasterio import features
 
 from ykbl.samajibäl import rubanom_ramaj, _
 from ykbl.setul import SetulShp, KolibälSetul
-from .ruxeeltzij import RuxeelTzij
+from .ruxeeltzij import RuxeelTzij, TununemRetalJaloj
 
 
 class RuxakMoltzïk(object):
-    def __init__(ri, runuk, ramaj):
+    def __init__(ri, runuk, ramaj, tununem):
         ri.runuk = runuk
         ri.ramaj = rubanom_ramaj(ramaj)
+        ri.tununem = [tununem] if isinstance(tununem, TununemRetalJaloj) else tununem
+        ri.retal_jaloj = [tnm.retal_jaloj for tnm in tununem]
 
 
 class CholanilRuxakMoltzïk(RuxakMoltzïk):
     def __init__(ri, runuk, tununem, ramaj=None):
-        super().__init__(runuk, ramaj)
-        ri.tununem = tununem
-        ri.retal_jaloj = []
+        super().__init__(runuk, ramaj, tununem)
 
 
 class CholajilRuxakMoltzïk(RuxakMoltzïk):
     def __init__(ri, runuk, tununem, ramaj=None):
-        super().__init__(runuk, ramaj)
-        ri.rununem = tununem
-        ri.retal_jaloj = tununem.retal_jaloj
+        if not isinstance(tununem, TununemRetalJaloj):
+            raise TypeError(type(tununem))
+        super().__init__(runuk, ramaj, tununem)
 
 
 class RuxeelTzijMoltzïk(RuxeelTzij):
@@ -42,16 +42,18 @@ class RuxeelTzijMoltzïk(RuxeelTzij):
             )
         ri.xak = {}
         with rasterio.open(rochochibäl) as wj:
-            ri.crs = wj.crs.to_epsg()
+            ri.crs = wj.crs
             ri.kexonem = wj.transform
             ri.banikil = wj.shape
-            for xak in retamabäl.xak:
-                ri.xak[str(xak)] = wj.read(int(xak))
+            for xak in ri.ruxak:
+                ri.xak[str(xak.runuk)] = wj.read(int(xak.runuk))
 
-        super().__init__(rubi, retal_jaloj={rtl for xak in ri.ruxak for rtl in xak.retal_jaloj}, retamabäl=retamabäl)
+        super().__init__(rubi, tununem={tnm for xak in ri.ruxak for tnm in xak.tununem}, retamabäl=retamabäl)
 
     def rejqalem(ri, retal_jaloj, kolibäl, ramaj, chabäl):
-        xak = [xak.runuk for xak in ri.ruxak if any(rtl in retal_jaloj for rtl in xak.retal_jaloj)]
+        retal_jaloj = ri._rusikxïk_retal_jaloj(retal_jaloj)
+
+        xak = [xak for xak in ri.ruxak if any(rtl in retal_jaloj for rtl in xak.retal_jaloj)]
         if not xak:
             return
 
@@ -74,12 +76,14 @@ class RuxeelTzijMoltzïk(RuxeelTzij):
             )
         rucheel_kolbäl, rucheel_ramaj = _("K'olib'äl", chabäl), _("Ramaj", chabäl)
 
-        tzij = pd.DataFrame(data={rucheel_kolbäl: taq_kolibäl})
+        tzij = pd.DataFrame(columns=[rucheel_kolbäl, rucheel_ramaj])
         for xk in xak:
-            for etal, koj in koj_kiyatzuk:
-                m = np.where(koj, ri.xak[xk], np.nan)
+            tununem = [tnm for tnm in xk.tununem if tnm.retal_jaloj in retal_jaloj]
 
-                rubi_kolibäl = setul.rubi(etal, chabäl)
+            for etal, koj in koj_kiyatzuk.items():
+                m = np.where(koj, ri.xak[xk.runuk], np.nan)
+
+                rubi_kolibäl = setul.rubi_pa(etal, chabäl)
                 ramaj_xak = xk.ramaj or ri.ramaj
                 rucheel_konojel = {
                     rucheel_kolbäl: rubi_kolibäl, rucheel_ramaj: ramaj_xak
@@ -87,20 +91,27 @@ class RuxeelTzijMoltzïk(RuxeelTzij):
 
                 if isinstance(xk, CholanilRuxakMoltzïk):
                     rucheel_retaljaloj = {
-                        tnm.retal_jaloj.rubi_pa(chabäl): np.nanmean(
-                            (m == tnm.rucheel if isinstance(tnm.rucheel, int) else np.isin(m, tnm.rucheel))
-                        ) for tnm in xk.tununem
+                        tnm.retal_jaloj.rubi_pa(chabäl): np.mean(
+                            np.isin(m[~np.isnan(m)], tnm.rucheel)
+                        ) * setul.peraj_kiyatzuk(etal, tnm.retal_jaloj.junilal) for tnm in tununem
                     }
-                    # Chi ninb'an: ruq'axanïk juna'il
 
                 else:
-                    rubi_retaljaloj = xk.tununem.retal_jaloj.rubi_pa(chabäl)
+                    # Xaxe k'o jun kitununem ri taq cholajil moltzïk
+                    rubi_retaljaloj = tununem[0].rubi_pa(chabäl)
                     rucheel_retaljaloj = {rubi_retaljaloj: np.nanmean(m)}
 
                 akuchi = (tzij[rucheel_kolbäl] == rubi_kolibäl) & (tzij[rucheel_ramaj] == ramaj_xak)
                 if len(tzij.loc[akuchi]):
                     tzij.loc[akuchi, list(rucheel_retaljaloj)] = list(rucheel_retaljaloj.values())
                 else:
-                    tzij.append({**rucheel_konojel, **rucheel_retaljaloj})
+                    tzij = tzij.append({**rucheel_konojel, **rucheel_retaljaloj}, ignore_index=True)
 
         return tzij
+
+
+class TununemRetalJalojCholanilMolztïk(TununemRetalJaloj):
+    def __init__(ri, retal_jaloj, runuk):
+        if isinstance(runuk, (int, float, str)):
+            runuk = [runuk]
+        super().__init__(retal_jaloj, rucheel=runuk, junilal=None, jaloj=1)

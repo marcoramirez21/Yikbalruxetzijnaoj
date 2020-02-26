@@ -1,4 +1,6 @@
-from ykbl.setul import SetulShp
+import os
+
+from ykbl.setul import SetulShp, RucheelPeraj
 
 kolibäl = {
     '701': {'Kaqchikel': "Tz'olöj Ya'", 'español': 'Sololá'},
@@ -24,7 +26,8 @@ kolibäl = {
 
 Tinamït = SetulShp(
     'Tinamït',
-    'setul/muni y departamentos_gtm_fin/municipios_gtm_fin.shp',
+    os.path.join(os.path.dirname(__file__), 'muni y departamentos_gtm_fin/municipios_gtm_fin.shp'),
     rucheel_etal='COD_MUNI',
+    rucheel_peraj=RucheelPeraj('HECTARES', 'ha'),
     kolibäl=kolibäl
 )

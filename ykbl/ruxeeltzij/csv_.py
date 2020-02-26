@@ -1,13 +1,11 @@
 import os
 
+import numpy as np
 import pandas as pd
-from pint import UnitRegistry
 
 from ykbl.samajibäl import _, rubanom_ramaj
 from ykbl.setul import Setul
 from .ruxeeltzij import RuxeelTzij, TununemRetalJaloj
-
-ureg = UnitRegistry()
 
 
 class RucheelRamaj(object):
@@ -31,13 +29,16 @@ class RuxeelTzijCSV(RuxeelTzij):
         ri.kolibäl = kolibäl
         ri.ramaj = ramaj
 
-        ri.tununem = [tununem] if isinstance(tununem, TununemRetalJaloj) else tununem
-        super().__init__(rubi, retal_jaloj={tnm.retal_jaloj for tnm in ri.tununem}, retamabäl=retamabäl)
+        super().__init__(rubi, tununem=tununem, retamabäl=retamabäl)
 
     def jalixïk_cache(ri):
-        return os.path.isfile(ri.cache) and os.path.getmtime(ri.rochochibäl) > os.path.getmtime(ri.cache)
+        return os.path.isfile(ri.cache) and os.path.getmtime(ri.rochochibäl) < os.path.getmtime(ri.cache)
 
     def rejqalem(ri, retal_jaloj, kolibäl, ramaj, chabäl):
+
+        retal_jaloj = ri._rusikxïk_retal_jaloj(retal_jaloj)
+        if not retal_jaloj:
+            return
 
         rucheel = ri._rucheel_csv(retal_jaloj)
         rucheel_kolibäl, rucheel_ramaj = _("K'olib'äl", chabäl), _("Ramaj", chabäl)
@@ -52,11 +53,15 @@ class RuxeelTzijCSV(RuxeelTzij):
             tzj[rucheel_kolibäl] = tzj[ri.kolibäl.rucheel].map(ri.kolibäl.jalonïk).fillna(tzj[ri.kolibäl.rucheel])
         elif ri.kolibäl:
             tzj[rucheel_kolibäl] = str(ri.kolibäl)
+        else:
+            tzj[rucheel_kolibäl] = np.nan
 
         if isinstance(ri.ramaj, RucheelRamaj):
             tzj[ri.ramaj.rucheel] = pd.to_datetime(tzj[ri.ramaj.rucheel], format=ri.ramaj.rubeyal)
         elif ri.ramaj:
             tzj[rucheel_ramaj] = rubanom_ramaj(ri.ramaj)
+        else:
+            tzj[rucheel_ramaj] = np.nan
 
         tzj = tzj.rename(columns=ri._kibi_retaljaloj_rucheel(chabäl))
 

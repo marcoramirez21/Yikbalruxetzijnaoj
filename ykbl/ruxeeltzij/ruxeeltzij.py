@@ -1,8 +1,4 @@
-from warnings import warn
-
-import pint
-
-ureg = pint.UnitRegistry()
+from ykbl.samajibäl import ruqaxanïk_junilal
 
 
 class RetamabälRuxeelTzij(object):
@@ -15,23 +11,26 @@ class RetamabälRuxeelTzij(object):
 
 
 class RuxeelTzij(object):
-    def __init__(ri, rubi, retal_jaloj, retamabäl):
+    def __init__(ri, rubi, tununem, retamabäl):
         ri.rubi = rubi
-        ri.retal_jaloj = retal_jaloj
+        ri.tununem = [tununem] if isinstance(tununem, TununemRetalJaloj) else tununem
         ri.retamabäl = retamabäl
+
+        ri.retal_jaloj = [tnm.retal_jaloj for tnm in ri.tununem]
 
     def rejqalem(ri, retal_jaloj, kolibäl, ramaj, chabäl):
         raise NotImplementedError
 
+    def _rusikxïk_retal_jaloj(ri, retal_jaloj):
+        return [tnm.retal_jaloj for tnm in ri.tununem if tnm.retal_jaloj in retal_jaloj]
+
 
 class TununemRetalJaloj(object):
-    def __init__(ri, retal_jaloj, rucheel, junilal):
-        ri.rubi = rucheel
+    def __init__(ri, retal_jaloj, rucheel, junilal, jaloj=None):
+        ri.rucheel = rucheel
         ri.retal_jaloj = retal_jaloj
         ri.junilal = junilal
-        jnl_rtljlj = retal_jaloj.junilal
-        try:
-            ri.jaloj = ureg.parse_expression(ri.junilal).to(jnl_rtljlj)
-        except pint.errors.UndefinedUnitError:
-            ri.jaloj = 1
-            warn("Man xojtikïr ta niqak'exwachij {jnl} pa {jnlrtl}.".format(jnl=ri.junilal, jnlrtl=jnl_rtljlj))
+        if jaloj:
+            ri.jaloj = jaloj
+        else:
+            ri.jaloj = ruqaxanïk_junilal(ri.junilal, retal_jaloj.junilal)
