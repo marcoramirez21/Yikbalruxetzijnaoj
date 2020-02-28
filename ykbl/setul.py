@@ -28,7 +28,8 @@ class Setul(object):
         for chb in chabäl:
             if retal in ri.kolibäl and chb in ri.kolibäl[retal]:
                 rubi = ri.kolibäl[retal][chb]
-                return rubi or retal
+                if rubi:
+                    return rubi
         return retal
 
     def retal(ri, rubi):

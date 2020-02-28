@@ -151,7 +151,8 @@ k'iyatz'uk chupam jun setul.
 nusamaj.rejqalem(che, nusetul)
 
 # We nawajo' ri taq tzolitzij pa jun chïk ch'ab'äl
-nusamaj.rejqalem(che, nusetul, chabäl="Tz'utujil")
+samaj_atitlán.tatzijoj(["Tz'utujil", "Kaqchikel", "español"])
+nusamaj.rejqalem(che, nusetul)
 
 # Xaxe kichin ri taq tinamït Pan Ajache'l chuqa Tz'ikinajay
 nusamaj.rejqalem(che, nusetul[["Pan Ajache'l", "Tz'ikinajay"]])
