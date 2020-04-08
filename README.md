@@ -1,6 +1,23 @@
 # Yikbalruxetzijnaoj
 Jawra k'olib'al rxin yikb'al ruxe'tzij na'ouj rxin k'utb'al samaj konxik tzrij Ya' Atitlán.  
 
+## Relesaxïk kirejqalem retal jaloj
+Yattikïr natelesaj kirejqalem retal jaloj richin jun k'olib'äl chuqa' kichin konojel taq
+k'iyatz'uk chupam jun setul.
+Tasik'ij chue rema retamab'äl chirij rub'eyal rujunumaxïk retal jaloj, setul, chuqa' ruxe'el tzij.
+
+```python
+# Xtiya' ri peraj che' pa konojel taq tinamït
+nusamaj.rejqalem(che, Tinamït)
+
+# We nawajo' ri taq tzolitzij pa jun chïk ch'ab'äl
+nusamaj.tatzijoj(["Tz'utujil", "Kaqchikel", "español"])
+nusamaj.rejqalem(che, Tinamït)
+
+# Xaxe kichin ri taq tinamït Pan Ajache'l chuqa Tz'ikinajay
+nusamaj.rejqalem(che, Tinamït[["Pan Ajache'l", "Tz'ikinajay"]])
+```
+
 ## Retal jaloj
 Nab'ey tajunumaj ri taq retal jaloj achojik'in nawajo nasamaj.
 
@@ -13,7 +30,7 @@ jab = RetalJaloj("Jab'", kulbat=(0, None), junilal='cm')
 
 # Yatkowin naya rub'i' pa k'iy taq ch'ab'äl chuqa'
 tikon = RetalJaloj({
-        "Kaqchikel": "Che'", "español": "Árboles"
+        "Kaqchikel": "Tiko'n", "español": "Agricultura"
     }, kulbat=(0, None), junilal='ha'
 )
 
@@ -141,19 +158,4 @@ Tinamït = SetulShp(
     kolibäl=kolibäl
 )
 
-```
-
-## Relesaxïk kirejqalem retal jaloj
-Yattikïr natelesaj kirejqalem retal jaloj richin jun k'olib'äl chuqa' kichin konojel taq
-k'iyatz'uk chupam jun setul.
-
-```python
-nusamaj.rejqalem(che, nusetul)
-
-# We nawajo' ri taq tzolitzij pa jun chïk ch'ab'äl
-samaj_atitlán.tatzijoj(["Tz'utujil", "Kaqchikel", "español"])
-nusamaj.rejqalem(che, nusetul)
-
-# Xaxe kichin ri taq tinamït Pan Ajache'l chuqa Tz'ikinajay
-nusamaj.rejqalem(che, nusetul[["Pan Ajache'l", "Tz'ikinajay"]])
 ```
