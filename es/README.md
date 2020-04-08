@@ -5,7 +5,7 @@ Es un repositorio central de datos para la modelización del lago Atitlán.
 
 ## Extracción de valores de variables
 Se pueden extraer los valores de los variables para un lugár específico, tanto como para cada polígono de un mapa.
-Seguir leyendo para ver cómo se especifica variables, mapas y bases de datos.
+Seguir leyendo para ver cómo se especifican variables, mapas y bases de datos.
 
 ```python
 # Obtener la cobertura de árboles para cada municipio de la cuenca
@@ -15,8 +15,8 @@ miproyecto.rejqalem(árboles, Munis)
 miproyecto.tatzijoj(["español", "Tz'utujil", "Kaqchikel"])
 miproyecto.rejqalem(árboles, Munis)
 
-# Solamente devolver datos para Pan Ajache'l y Tz'ikinajay
-miproyecto.rejqalem(árboles, Munis[["Pan Ajache'l", "Tz'ikinajay"]])
+# Solamente devolver datos para Pan Ajache'l/Panajachel y Tz'ikinajay/Santiago Atitlán
+miproyecto.rejqalem(árboles, Munis[["Panajachel", "Santiago Atitlán"]])
 ```
 
 ## Variables
