@@ -64,8 +64,10 @@ moltzïk ye'ok chupam konojel taq k'iyatz'uk k'o chupam asetul, k'a ri' xtajilaj
 kirejqalem retal jaloj kik'in re tzïk re'. 
 
 ```python
+```python
+```python
 from ykbl import RuxeelTzijMoltzïk, CholanilRuxakMoltzïk, CholajilRuxakMoltzïk, RetamabälRuxeelTzij
-from ykbl.ruxeeltzij.moltzïk import TununemRetalJalojCholanilMolztïk as TnChln, TununemRetalJalojCholajilMolztïk as TnChlj
+from ykbl.ruxeeltzij.moltzïk import TununemRetalJalojCholanilMoltzïk as TnChln, TununemRetalJalojCholajilMoltzïk as TnChlj
 
 
 retamabäl = RetamabälRuxeelTzij(
