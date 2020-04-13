@@ -50,6 +50,6 @@ def rubanom_ramaj(ramaj):
 def ruqaxanïk_junilal(jnll1, jnll2):
     try:
         return ureg.parse_expression(jnll1).to(jnll2).magnitude
-    except (pint.errors.UndefinedUnitError, pint.errors.DimensionalityError):
+    except (pint.errors.UndefinedUnitError, pint.errors.DimensionalityError, AttributeError):
         warn("Man xojtikïr ta niqak'exwachij {jnll1} pa {jnll2}.".format(jnll1=jnll1, jnll2=jnll2))
         return 1
