@@ -4,22 +4,19 @@ from atitlán.rtljlj import ruwächqij_retal_jaloj_DICA_AMSCLAE, nevada, jab
 from ykbl import RuxeelTzijCSV, RetamabälRuxeelTzij, TununemRetalJaloj
 from ykbl.ruxeeltzij.csv_ import RucheelRamaj
 
-# ToDo: Create retamabäls and RuxeelTzij Objects for all variables in the DICA-AMSCLAE FILES.
-# ToDo: Figure out the correct date-string format string for the DICA-AMSCLAE FILES.
-# ToDo: Automate the reading of the weather files for all years and stations of DICA-AMSCLAE.
 """
 Estaciones Climáticas:
-Barreneche
-El Tablon
-Finca Santa Victoria
+Barreneche: 14.826742, -91.220013 (422,514.00, 1,639,619.00)
+El Tablon:  14.797717, -91.181482 (426,653.00, 1,636,400.00)
+Finca Santa Victoria 
 Los Saminez
 Pamesebal
-Panajachel
-San Jose Chacaya
-San Juan La Laguna
-San Lucas Toliman
-Santa Lucia Utatlan
-Santiago Atitlan
+Panajachel (429,740.00, 1,630,030.00)
+San Jose Chacaya (423,012.00, 1,633,566.00)
+San Juan La Laguna (415,227.00, 1,625,033.00)
+San Lucas Toliman (430,826.00, 1,618,247.00)
+Santa Lucia Utatlan (417,487.00, 1,633,474.00)
+Santiago Atitlan (421,129.00, 	1,619,029.00)
 """
 janilaCholRetalJaloj = [cholRetalJaloj
       for cholRetalJaloj in os.listdir("C:\\Users\\Joel\\PycharmProjects\\Yikbalruxetzijnaoj\\atitlán\\ruxeeltzij\csv")
