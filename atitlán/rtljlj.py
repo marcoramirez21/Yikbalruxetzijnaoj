@@ -1,37 +1,35 @@
 from ykbl import RetalJaloj
 
-# ToDo: Sort variables in rucheel jaloj ruwäch q'ij according to DICA-AMSCLAE convention
-# ToDo: Call Variables Monthly  "ik'" meaning month
 etabälqij = RetalJaloj(
     {"Kaqchikel": "Etab'äl qi'j", "español": "Radiación Solar"}, kulbat=(0, None), junilal="W/(m*m)"
 )
-max_etabälqij = RetalJaloj(
-    {"Kaqchikel": "ask julien", "español": "Radiación Solar Maximal"}, kulbat=(0, None), junilal="W/(m*m)"
+nïm_etabälqij = RetalJaloj(
+    {"Kaqchikel": "Nïm etabälqij", "español": "Radiación Solar Maximal"}, kulbat=(0, None), junilal="W/(m*m)"
 )
-max_temp = RetalJaloj(
-    {"Kaqchikel": "ask julien", "español": "Temperatura Maximal"}, kulbat=(None, None), junilal="°C"
+nïm_tewkatanil = RetalJaloj(
+    {"Kaqchikel": "Nïm tewk'atanil", "español": "Temperatura Maximal"}, kulbat=(None, None), junilal="°C"
 )
-min_temp = RetalJaloj(
-    {"Kaqchikel": "ask julien", "español": "Temperatura Minimal"}, kulbat=(None, None), junilal="°C"
+koöl_tewkatanil = RetalJaloj(
+    {"Kaqchikel": "Ko'öl tewk’atanil ", "español": "Temperatura Minimal"}, kulbat=(None, None), junilal="°C"
 )
-prom_temp = RetalJaloj(
-    {"Kaqchikel": "ask julien", "español": "Temperatura Prom."}, kulbat=(None, None), junilal="°C"
+cholajil_tewkatanil = RetalJaloj(
+    {"Kaqchikel": "Cholajil tewk'atanil", "español": "Temperatura Prom."}, kulbat=(None, None), junilal="°C"
 )
 etabälräxkaqïq = RetalJaloj(
     {"Kaqchikel": "Etab'äl räx kaq’ïq", "español": "Humedad"}, kulbat=(0, 100), junilal="%"
 )
-indiceUV = RetalJaloj(
-    {"Kaqchikel": "ask julien", "español": "Indice UV"}, kulbat=(0, None), junilal="Unid"
+etabälMetzetelSaqil = RetalJaloj(
+    {"Kaqchikel": "Etab'äl metz’etel saqil", "español": "Indice UV"}, kulbat=(0, None), junilal="Unid"
 )
-max_indiceUV = RetalJaloj(
-    {"Kaqchikel": "ask julien", "español": "Indice UV Maximal"}, kulbat=(0, None), junilal="Unid"
+nïm_etabälMetzetelSaqil = RetalJaloj(
+    {"Kaqchikel": "Etab'äl metz'etel saqil nïm", "español": "Indice UV Mayor"}, kulbat=(0, None), junilal="Unid"
 )
-max_apokaqïq = RetalJaloj(
-    {"Kaqchikel": "ask julien", "español": "Direccion Viento Max"}, kulbat=(0, None), junilal="NESW"
+nïm_ochochibälKaqïq = RetalJaloj(
+    {"Kaqchikel": "Ochochib’äl nïm kaq'ïq'", "español": "Dirección Viento Max"}, kulbat=(0, None), junilal="NESW"
 )
 
-max_ruchuqakaqiq = RetalJaloj(
-    {"Kaqchikel": "ask julien", "español": "Velocidad Viento Maximal"}, kulbat=(0, None), junilal="km/h"
+nïm_aninemKaqïq = RetalJaloj(
+    {"Kaqchikel": "Nïm aninem kaq'ïq'", "español": "Velocidad Viento Maximal"}, kulbat=(0, None), junilal="km/h"
 )
 precipitación = RetalJaloj(
     {"Kaqchikel": "ask julien", "español": "Precipitación"}, kulbat=(0, None), junilal="mm"
@@ -65,9 +63,7 @@ kokoltaqche = RetalJaloj(
     kulbat=(0, None), junilal='ha'
 )
 
-ruwächqij_retal_jaloj_DICA_AMSCLAE = [min_temp, prom_temp, max_temp, etabälräxkaqïq, precipitación, etabälqij,
-                                      max_etabälqij, indiceUV, max_indiceUV, max_apokaqïq, max_ruchuqakaqiq]
+ruwächqij_retal_jaloj_DICA_AMSCLAE = [koöl_tewkatanil, cholajil_tewkatanil, nïm_tewkatanil, etabälräxkaqïq, precipitación, etabälqij,
+                                      nïm_etabälqij, etabälMetzetelSaqil, nïm_ochochibälKaqïq, nïm_aninemKaqïq, nïm_aninemKaqïq]
 
-taq_retal_jaloj = [tzujalchirijulew, jab, kichelaj, che, tikon, kokoltaqche, etabälqij, max_etabälqij, max_temp,
-                   min_temp, prom_temp, etabälräxkaqïq, indiceUV, max_indiceUV, max_apokaqïq, max_ruchuqakaqiq,
-                   precipitación, nevada]
+taq_retal_jaloj = [tzujalchirijulew, jab, kichelaj, che, tikon, kokoltaqche]

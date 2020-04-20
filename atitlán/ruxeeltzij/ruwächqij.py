@@ -20,9 +20,11 @@ San Juan La Laguna
 San Lucas Toliman
 Santa Lucia Utatlan
 Santiago Atitlan
-
-
 """
+janilaCholRetalJaloj = [cholRetalJaloj
+      for cholRetalJaloj in os.listdir("C:\\Users\\Joel\\PycharmProjects\\Yikbalruxetzijnaoj\\atitlán\\ruxeeltzij\csv")
+      if "DATOS CLIMATICOS DICA-AMSCLAE" in cholRetalJaloj]
+
 retamabälRuwächQij = RetamabälRuxeelTzij(
     qijxjunimaxïk="10-04-2020", xjunumaxïkroma="Joel Z. Harms", tzibanel=
     "Autoridad Para el Manejo Sustentable de la Cuenca del Lago Atitlan y su Entorno (AMSCLAE)"
@@ -35,14 +37,15 @@ headers_DICA_AMSCLAE = ["Temp. Min. Abs. (°C)", "Temp. Prom (°C)", "Temp. Max 
                         "Velocidad Viento Max. (km/h)"]
 
 tununemRuwächQij_DICA_AMSCLAE = [TununemRetalJaloj(ruwächqij_retal_jaloj_DICA_AMSCLAE[i],
-                                                   headers_DICA_AMSCLAE[i],
-                                                   ruwächqij_retal_jaloj_DICA_AMSCLAE[i].junilal)
+                                                   rucheel=headers_DICA_AMSCLAE[i],
+                                                   junilal=ruwächqij_retal_jaloj_DICA_AMSCLAE[i].junilal)
                                  for i in range(0, len(ruwächqij_retal_jaloj_DICA_AMSCLAE))]
 
-rxltzjRuwächQij = RuxeelTzijCSV(
-    "",# add name here
-    rochochibäl=os.path.join(os.path.dirname(__file__), "csv/DATOS CLIMATICOS DICA-AMSCLAE-Barreneche-2011.csv"),
+
+
+rxltzjRuwächQij = [RuxeelTzijCSV(
+    (cholRetalJaloj.split("-")[2]+cholRetalJaloj.split("-")[3]).split(".")[0],
+    rochochibäl=os.path.join(os.path.dirname(__file__), "csv/"+ cholRetalJaloj),
     retamabäl=retamabälRuwächQij,
-    kolibäl=None, ramaj=RucheelRamaj(rucheel="Mes", rubeyal="%Y-%m-%d"),
-    tununem=tununemRuwächQij_DICA_AMSCLAE
-)
+    kolibäl=None, ramaj=RucheelRamaj(rucheel="Día", rubeyal="%Y-%m-%d"),
+    tununem=tununemRuwächQij_DICA_AMSCLAE) for cholRetalJaloj in janilaCholRetalJaloj]
