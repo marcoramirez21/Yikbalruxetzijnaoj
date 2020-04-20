@@ -1,10 +1,4 @@
-﻿"Autoridad Para el Manejo Sustentable de la Cuenca del Lago Atitlan y su Entorno (AMSCLAE)"
-"Departamento de Investigacion y Calidad Ambiental (DICA)"
-"Estacion Climatica de"
-"San Lucas Toliman"
-2017
-"  "
-Mes,"Temp. Min. Abs. (°C)","Temp. Prom (°C)","Temp. Max Abs. (°C)","Hum. (%)","Precipitacion (mm)","Rad. Solar (W/m2)","Rad. Solar Max Abs.(W/m2)","Indice UV (Unidad)","Indice UV Max Abs. (Unidad)","Direccion Viento Max","Velocidad Viento Max. (km/h)"
+﻿Día,"Temp. Min. Abs. (°C)","Temp. Prom (°C)","Temp. Max Abs. (°C)","Hum. (%)","Precipitacion (mm)","Rad. Solar (W/m2)","Rad. Solar Max Abs.(W/m2)","Indice UV (Unidad)","Indice UV Max Abs. (Unidad)","Direccion Viento Max","Velocidad Viento Max. (km/h)"
 2017-01-01,12.60,17.08,22.30,81.88,0.00,184.08,802.00,0.96,5.00,SW,24.15
 2017-01-02,13.40,17.27,23.40,78.54,0.00,191.62,777.00,1.01,5.10,SSW,9.43
 2017-01-03,13.80,17.53,22.30,75.92,0.00,193.42,754.00,0.99,4.90,SW,26.85

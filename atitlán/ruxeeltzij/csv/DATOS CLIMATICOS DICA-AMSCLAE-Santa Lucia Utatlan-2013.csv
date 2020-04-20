@@ -1,10 +1,4 @@
-﻿"Autoridad Para el Manejo Sustentable de la Cuenca del Lago Atitlan y su Entorno (AMSCLAE)"
-"Departamento de Investigacion y Calidad Ambiental (DICA)"
-"Estacion Climatica de"
-"Santa Lucia Utatlan"
-2013
-"  "
-Mes,"Temp. Min. Abs. (°C)","Temp. Prom (°C)","Temp. Max Abs. (°C)","Hum. (%)","Precipitacion (mm)","Rad. Solar (W/m2)","Rad. Solar Max Abs.(W/m2)","Indice UV (Unidad)","Indice UV Max Abs. (Unidad)","Direccion Viento Max","Velocidad Viento Max. (km/h)"
+﻿Día,"Temp. Min. Abs. (°C)","Temp. Prom (°C)","Temp. Max Abs. (°C)","Hum. (%)","Precipitacion (mm)","Rad. Solar (W/m2)","Rad. Solar Max Abs.(W/m2)","Indice UV (Unidad)","Indice UV Max Abs. (Unidad)","Direccion Viento Max","Velocidad Viento Max. (km/h)"
 2013-01-01,9.60,13.38,19.30,79.46,0.00,193.58,954.00,1.38,7.90,SSW,1.25
 2013-01-02,8.00,12.45,19.70,82.54,0.00,211.96,935.00,1.45,7.80,SSW,1.89
 2013-01-03,7.80,12.69,19.40,69.17,0.00,210.08,842.00,1.44,7.40,SSW,2.08

@@ -1,10 +1,4 @@
-﻿"Autoridad Para el Manejo Sustentable de la Cuenca del Lago Atitlan y su Entorno (AMSCLAE)"
-"Departamento de Investigacion y Calidad Ambiental (DICA)"
-"Estacion Climatica de"
-"San Jose Chacaya"
-2016
-"  "
-Mes,"Temp. Min. Abs. (°C)","Temp. Prom (°C)","Temp. Max Abs. (°C)","Hum. (%)","Precipitacion (mm)","Rad. Solar (W/m2)","Rad. Solar Max Abs.(W/m2)","Indice UV (Unidad)","Indice UV Max Abs. (Unidad)","Direccion Viento Max","Velocidad Viento Max. (km/h)"
+﻿Día,"Temp. Min. Abs. (°C)","Temp. Prom (°C)","Temp. Max Abs. (°C)","Hum. (%)","Precipitacion (mm)","Rad. Solar (W/m2)","Rad. Solar Max Abs.(W/m2)","Indice UV (Unidad)","Indice UV Max Abs. (Unidad)","Direccion Viento Max","Velocidad Viento Max. (km/h)"
 2016-01-01,12.30,15.98,22.20,66.96,0.00,,,,,ENE,27.81
 2016-01-02,12.90,16.06,21.90,68.21,0.00,,,,,SE,24.37
 2016-01-03,7.60,14.48,21.20,78.38,0.00,,,,,SE,16.37

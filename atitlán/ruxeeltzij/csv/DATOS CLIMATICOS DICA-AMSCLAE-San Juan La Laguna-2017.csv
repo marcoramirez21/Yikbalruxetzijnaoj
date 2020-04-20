@@ -1,10 +1,4 @@
-﻿"Autoridad Para el Manejo Sustentable de la Cuenca del Lago Atitlan y su Entorno (AMSCLAE)"
-"Departamento de Investigacion y Calidad Ambiental (DICA)"
-"Estacion Climatica de"
-"San Juan La Laguna"
-2017
-"  "
-Mes,"Temp. Min. Abs. (°C)","Temp. Prom (°C)","Temp. Max Abs. (°C)","Hum. (%)","Precipitacion (mm)","Rad. Solar (W/m2)","Rad. Solar Max Abs.(W/m2)","Indice UV (Unidad)","Indice UV Max Abs. (Unidad)","Direccion Viento Max","Velocidad Viento Max. (km/h)"
+﻿Día,"Temp. Min. Abs. (°C)","Temp. Prom (°C)","Temp. Max Abs. (°C)","Hum. (%)","Precipitacion (mm)","Rad. Solar (W/m2)","Rad. Solar Max Abs.(W/m2)","Indice UV (Unidad)","Indice UV Max Abs. (Unidad)","Direccion Viento Max","Velocidad Viento Max. (km/h)"
 2017-01-01,12.10,17.50,23.50,78.83,0.00,204.79,779.00,1.57,6.90,SW,9.95
 2017-01-02,12.10,17.52,23.80,75.83,0.00,205.21,805.00,1.62,7.30,SW,12.16
 2017-01-03,12.20,17.08,23.40,78.71,0.00,181.71,867.00,1.50,6.70,SW,11.83
