@@ -72,7 +72,7 @@ yatkowin naya' jun `RucheelRamaj` chuqa' jun `RucheelKolibäl`.
 ### Moltzïk taq ruxe'el tzij
 K'o ka'i' taq kiwäch retal jaloj richin moltzïk, cholajil chuqa' cholanil.
 Jun moltzïk ruxe'el tzij (achi'el `.tif`) yetikïr ye'ok jujun taq ruxak chupam.
-Roma tz'eb'äl, xkojsamaj rik'in jun ruxe'el tzij k'o ka'i' taq ruxak, jun cholajil
+Roma tz'etb'äl, xkojsamaj rik'in jun ruxe'el tzij k'o ka'i' taq ruxak, jun cholajil
 chuqa' jun cholanil. 
 
 Toq natelesaj kirejqalem retal jaloj richin jun `MoltzïkRuxeelTzij`, k'o chi naya' 

@@ -1,0 +1,22 @@
+{
+  "name": "ykbl",
+  "version": "1.0.0",
+  "description": "Jawra k'olib'al rxin yikb'al ruxe'tzij na'ouj rxin k'utb'al samaj konxik tzrij Ya' Atitlán.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node build/dev-server.js",
+    "build": "node build/build.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julienmalard/Yikbalruxetzijnaoj.git"
+  },
+  "author": "Julien Malard, Mak'uux Ramírez",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/julienmalard/Yikbalruxetzijnaoj/issues"
+  },
+  "homepage": "https://github.com/julienmalard/Yikbalruxetzijnaoj#readme"
+}

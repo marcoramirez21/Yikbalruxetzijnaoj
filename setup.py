@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(
-    name='yikbalruxetzijnaoj',
+    name='atitya',
     version='0',
     packages=['ykbl'],
     url='https://github.com/marcoramirez21/Yikbalruxetzijnaoj',
