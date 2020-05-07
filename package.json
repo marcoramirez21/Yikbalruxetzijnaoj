@@ -4,6 +4,7 @@
   "description": "Jawra k'olib'al rxin yikb'al ruxe'tzij na'ouj rxin k'utb'al samaj konxik tzrij Ya' Atitlán.",
   "main": "index.js",
   "scripts": {
+    "build": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
