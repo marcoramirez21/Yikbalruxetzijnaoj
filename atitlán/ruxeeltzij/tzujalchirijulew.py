@@ -14,3 +14,4 @@ rxltzj = RuxeelTzijCSV(
     kolibäl=None, ramaj=RucheelRamaj(rucheel="Date", rubeyal="%Y%m"),
     tununem=TununemRetalJaloj(tzujalchirijulew, rucheel='mm', junilal='mm')
 )
+

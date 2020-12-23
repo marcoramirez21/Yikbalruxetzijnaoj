@@ -1,2 +1,2 @@
-from .jutzoya import RujunilalTzolitzijYa
+# from .jutzoya import RujunilalTzolitzijYa
 from .tinamït import Tinamït

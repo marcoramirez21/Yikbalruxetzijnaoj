@@ -110,13 +110,13 @@ class RuxeelTzijMoltzïk(RuxeelTzij):
         return tzij
 
 
-class TununemRetalJalojCholanilMolztïk(TununemRetalJaloj):
+class TununemRetalJalojCholanilMoltzïk(TununemRetalJaloj):
     def __init__(ri, retal_jaloj, runuk):
         if isinstance(runuk, (int, float, str)):
             runuk = [runuk]
         super().__init__(retal_jaloj, rucheel=runuk, junilal=None, jaloj=1)
 
 
-class TununemRetalJalojCholajilMolztïk(TununemRetalJaloj):
+class TununemRetalJalojCholajilMoltzïk(TununemRetalJaloj):
     def __init__(ri, retal_jaloj, junilal):
         super().__init__(retal_jaloj, rucheel=None, junilal=junilal)

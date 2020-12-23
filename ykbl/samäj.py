@@ -32,6 +32,7 @@ class Samäj(object):
             tzij = rxl.rejqalem(retal_jaloj, kolibäl=kolibäl, ramaj=ramaj, chabäl=ri.chabäl)
             if tzij is not None and len(tzij):
                 tzij[_("Ruxe'el", ri.chabäl)] = rxl.rubi
+                print(tzij)
                 tzolinïk = tzolinïk.append(tzij)
 
         return tzolinïk

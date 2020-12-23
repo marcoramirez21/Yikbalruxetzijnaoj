@@ -2,7 +2,7 @@ import os
 
 from atitlán.rtljlj import kichelaj, che, tikon, kokoltaqche
 from ykbl import RuxeelTzijMoltzïk, CholanilRuxakMoltzïk, RetamabälRuxeelTzij
-from ykbl.ruxeeltzij.moltzïk import TununemRetalJalojCholanilMolztïk as Tn
+from ykbl.ruxeeltzij.moltzïk import TununemRetalJalojCholanilMoltzïk as Tn
 
 """
 1	Granos básicos
